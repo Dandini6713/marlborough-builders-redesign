@@ -41,8 +41,8 @@ const featuredProjects = [
 ];
 
 const processSteps = [
-  "Initial conversation",
-  "Site visit or scope review",
+  "Initial enquiry",
+  "Site visit and advice",
   "Clear quotation",
   "Work completed properly",
 ];
@@ -151,8 +151,7 @@ export default function Home() {
             <p className="eyebrow">Featured work</p>
             <h2>Recent joinery and roofing work</h2>
             <p>
-              Stronger project presentation helps Marlborough Builders feel more
-              established, more capable and more distinctive than a typical trade website.
+              Examples of the type of work Marlborough Builders delivers across domestic and commercial projects.
             </p>
           </div>
 
@@ -186,11 +185,10 @@ export default function Home() {
         <div className="container process-grid">
           <div className="section-heading compact">
             <p className="eyebrow">How it works</p>
-            <h2>Clear process, straightforward communication.</h2>
+            <h2>A straightforward process from first enquiry to completion.</h2>
             <p>
-              One of the main improvements over the old site is making the
-              business feel more structured, more established and easier to
-              trust from the first visit.
+              Keeping jobs clear from the outset helps make the whole process easier to manage,
+              from the first conversation through to the finished work.
             </p>
           </div>
 
@@ -211,12 +209,11 @@ export default function Home() {
             <p className="eyebrow">Get in touch</p>
             <h2>Need joinery or roofing work in Prescot or across Merseyside?</h2>
             <p>
-              Get in touch for a straightforward quote, practical advice and a
-              professional approach from start to finish.
+              Get in touch for a clear quotation, practical advice and work carried out to a proper standard.
             </p>
           </div>
           <a href="/contact" className="button button-primary">
-            Contact Marlborough Builders
+            Request a quote
           </a>
         </div>
       </section>

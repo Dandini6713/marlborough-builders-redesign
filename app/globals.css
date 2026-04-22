@@ -245,25 +245,17 @@ a {
 }
 
 .trust-card {
-  padding: 28px;
+  padding: 30px;
   border-radius: 24px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.92);
   box-shadow: var(--shadow-soft);
 }
 
-.trust-card-label {
-  margin: 0 0 12px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-}
 
 .trust-card h3 {
-  margin: 0;
-  font-size: 1.25rem;
+  margin: 0 0 12px;
+  font-size: 1.28rem;
   letter-spacing: -0.02em;
 }
 
@@ -274,7 +266,7 @@ a {
 }
 
 .featured-work-section {
-  background: rgba(255, 255, 255, 0.35);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(249, 246, 240, 0.78) 100%);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -288,23 +280,24 @@ a {
 .featured-work-card {
   overflow: hidden;
   border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.94);
   box-shadow: var(--shadow-soft);
 }
 
 .featured-work-image-wrap {
-  min-height: 280px;
+  min-height: 320px;
 }
 
 .featured-work-content {
-  padding: 26px 26px 30px;
+  padding: 28px 28px 32px;
 }
 
 .featured-work-content h3 {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
 .featured-work-content p {
@@ -314,8 +307,9 @@ a {
 
 .featured-work-link {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 14px;
   font-weight: 700;
+  color: var(--accent);
 }
 
 .card-kicker {
@@ -346,10 +340,10 @@ a {
   grid-template-columns: 64px 1fr;
   gap: 14px;
   align-items: center;
-  padding: 18px 20px;
-  border-radius: 18px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.78);
+  padding: 22px 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow-soft);
 }
 
@@ -360,7 +354,8 @@ a {
 }
 
 .process-list strong {
-  font-size: 1.05rem;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
 }
 
 .cta-section {
@@ -373,10 +368,10 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 34px;
+  padding: 38px;
   border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: linear-gradient(145deg, #e9dfcf 0%, #d9cbb6 100%);
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: linear-gradient(145deg, #eadfce 0%, #d8c8b2 100%);
   box-shadow: var(--shadow-soft);
 }
 
