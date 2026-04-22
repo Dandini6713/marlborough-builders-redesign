@@ -3,7 +3,7 @@ import Image from "next/image";
 const trustItems = [
   {
     title: "Clear quotations",
-    text: "Straightforward pricing, clear scope and practical advice from the outset.",
+    text: "Clear scope, straightforward pricing and practical advice before work starts.",
   },
   {
     title: "Reliable communication",
@@ -11,32 +11,32 @@ const trustItems = [
   },
   {
     title: "Quality workmanship",
-    text: "High standards across both joinery and roofing, with a finish that reflects the trade properly.",
+    text: "Joinery and roofing work carried out with care, attention to detail and a proper finish.",
   },
   {
     title: "Domestic and commercial experience",
-    text: "A trusted local company able to take on residential work as well as broader project needs.",
+    text: "Trusted for residential work as well as broader project requirements across the North West.",
   },
 ];
 
 const featuredProjects = [
   {
     category: "Joinery",
-    title: "Bespoke interior joinery",
-    image: "/assets/images/gallery/joinery/joinery-alcove-tv-unit.jpg",
-    text: "Built-in storage, fitted details and practical interior craftsmanship with a clean, professional finish.",
+    title: "Oak balustrade and fitted joinery",
+    image: "/assets/images/gallery/joinery/oak-glass-balustrade-after.jpg",
+    text: "A fitted joinery project with clean timber detailing, a more refined finish and a stronger premium feel.",
   },
   {
     category: "Roofing",
-    title: "Residential roofing work",
+    title: "Residential roof repair and re-slating",
     image: "/assets/images/gallery/general/marlborough-roofing-hero.png",
-    text: "Roofing repairs and replacement work presented with clearer proof of quality and capability.",
+    text: "A roofing project centred on replacing damaged sections, improving weather protection and leaving the roof looking right.",
   },
   {
     category: "Joinery",
-    title: "Staircases and fitted timber work",
-    image: "/assets/images/gallery/joinery/oak-balustrade-completion.jpg",
-    text: "Timber features and staircase work that help position the business as skilled, reliable and detail-conscious.",
+    title: "Oak staircase and joinery detailing",
+    image: "/assets/images/gallery/joinery/joinery-staircase-oak-overview.jpg",
+    text: "A staircase-focused joinery project that better reflects the quality, finish and detail Marlborough Builders can deliver.",
   },
 ];
 
@@ -128,18 +128,16 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <p className="eyebrow">Why clients choose Marlborough Builders</p>
-            <h2>Trusted local workmanship with a more professional standard.</h2>
+            <h2>Clear quotations, reliable communication and work carried out to a proper standard</h2>
             <p>
-              A stronger site should reflect the same qualities clients expect on
-              the job, clarity, reliability, quality and a professional finish.
+              A good building company should be clear from the outset, reliable on the job and leave work finished to a proper standard.
             </p>
           </div>
 
           <div className="trust-grid">
             {trustItems.map((item) => (
               <article className="trust-card" key={item.title}>
-                <p className="trust-card-label">Why it matters</p>
-                <h3>{item.title}</h3>
+                                <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </article>
             ))}
@@ -151,10 +149,10 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <p className="eyebrow">Featured work</p>
-            <h2>Real projects presented more clearly.</h2>
+            <h2>Recent joinery and roofing work</h2>
             <p>
-              Showing completed work more clearly helps the business feel more
-              credible, more distinctive and less like a generic trade website.
+              Stronger project presentation helps Marlborough Builders feel more
+              established, more capable and more distinctive than a typical trade website.
             </p>
           </div>
 
