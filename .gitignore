@@ -1,10 +1,9 @@
+
+# Dependencies
 node_modules/
-dist/
-.next/
-.DS_Store
-*.log
-.env
-.env.local
-.env*.local
+
+# Local tool folders
 .claude/
-.vercel
+
+# Local environment files
+.env.local
