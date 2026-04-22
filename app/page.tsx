@@ -7,7 +7,7 @@ const trustItems = [
   },
   {
     title: "Reliable communication",
-    text: "A more professional, organised approach from first enquiry through to completion.",
+    text: "A professional, organised approach from first enquiry through to completion.",
   },
   {
     title: "Quality workmanship",
@@ -82,7 +82,7 @@ export default function Home() {
         <div className="container hero-layout">
           <div className="hero-copy">
             <p className="eyebrow">Prescot, Merseyside & North West</p>
-            <h1>Joinery and roofing work, done properly.</h1>
+            <h1>Joinery and roofing done properly</h1>
             <p className="hero-text">
               Marlborough Builders delivers quality joinery and roofing work for
               domestic and commercial clients across Prescot, Merseyside and the
@@ -127,17 +127,18 @@ export default function Home() {
       <section className="section trust-section">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Why clients trust Marlborough Builders</p>
-            <h2>A stronger, more reliable local contractor presence.</h2>
+            <p className="eyebrow">Why clients choose Marlborough Builders</p>
+            <h2>Trusted local workmanship with a more professional standard.</h2>
             <p>
-              The redesigned site should make the business feel more established,
-              more trustworthy and more reflective of the quality of work being delivered.
+              A stronger site should reflect the same qualities clients expect on
+              the job, clarity, reliability, quality and a professional finish.
             </p>
           </div>
 
           <div className="trust-grid">
             {trustItems.map((item) => (
               <article className="trust-card" key={item.title}>
+                <p className="trust-card-label">Why it matters</p>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
               </article>
@@ -150,10 +151,10 @@ export default function Home() {
         <div className="container">
           <div className="section-heading">
             <p className="eyebrow">Featured work</p>
-            <h2>Real projects, better presented.</h2>
+            <h2>Real projects presented more clearly.</h2>
             <p>
-              A more project-led approach helps the business feel more credible,
-              more distinctive and less like a generic trade website.
+              Showing completed work more clearly helps the business feel more
+              credible, more distinctive and less like a generic trade website.
             </p>
           </div>
 
@@ -173,6 +174,9 @@ export default function Home() {
                   <p className="card-kicker">{project.category}</p>
                   <h3>{project.title}</h3>
                   <p>{project.text}</p>
+                  <a href="/gallery" className="featured-work-link">
+                    View work
+                  </a>
                 </div>
               </article>
             ))}
