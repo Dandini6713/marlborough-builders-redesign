@@ -1,38 +1,42 @@
 import Image from "next/image";
 
-const trustPoints = [
-  "Prescot based",
-  "Joinery and roofing specialists",
-  "Domestic and commercial work",
-  "Serving Merseyside and the North West",
-];
-
-const featuredServices = [
+const trustItems = [
   {
-    title: "Joinery",
-    text: "Bespoke joinery, fitted interiors, structural timber work and practical upgrades carried out with care and attention to detail.",
+    title: "Clear quotations",
+    text: "Straightforward pricing, clear scope and practical advice from the outset.",
   },
   {
-    title: "Roofing",
-    text: "Roofing repairs, replacements and ongoing roofing works delivered with clear advice, reliable workmanship and a straightforward approach.",
+    title: "Reliable communication",
+    text: "A more professional, organised approach from first enquiry through to completion.",
+  },
+  {
+    title: "Quality workmanship",
+    text: "High standards across both joinery and roofing, with a finish that reflects the trade properly.",
+  },
+  {
+    title: "Domestic and commercial experience",
+    text: "A trusted local company able to take on residential work as well as broader project needs.",
   },
 ];
 
 const featuredProjects = [
   {
     category: "Joinery",
-    title: "Residential joinery projects",
-    text: "A refined showcase for kitchens, fitted work and bespoke timber details.",
+    title: "Bespoke interior joinery",
+    image: "/assets/images/gallery/joinery/joinery-alcove-tv-unit.jpg",
+    text: "Built-in storage, fitted details and practical interior craftsmanship with a clean, professional finish.",
   },
   {
     category: "Roofing",
-    title: "Roof repairs and replacements",
-    text: "A stronger presentation of roofing capability, project types and completed work.",
+    title: "Residential roofing work",
+    image: "/assets/images/gallery/general/marlborough-roofing-hero.png",
+    text: "Roofing repairs and replacement work presented with clearer proof of quality and capability.",
   },
   {
-    category: "Commercial",
-    title: "Commercial and mixed-scope work",
-    text: "Clearer evidence of experience across practical commercial jobs and larger-scale works.",
+    category: "Joinery",
+    title: "Staircases and fitted timber work",
+    image: "/assets/images/gallery/joinery/oak-balustrade-completion.jpg",
+    text: "Timber features and staircase work that help position the business as skilled, reliable and detail-conscious.",
   },
 ];
 
@@ -75,14 +79,14 @@ export default function Home() {
       </header>
 
       <section className="hero-section">
-        <div className="container hero-grid">
+        <div className="container hero-layout">
           <div className="hero-copy">
             <p className="eyebrow">Prescot, Merseyside & North West</p>
-            <h1>Built properly, finished with care.</h1>
+            <h1>Joinery and roofing work, done properly.</h1>
             <p className="hero-text">
-              A modern, dependable building company specialising in joinery and
-              roofing work for domestic and commercial clients across the North
-              West.
+              Marlborough Builders delivers quality joinery and roofing work for
+              domestic and commercial clients across Prescot, Merseyside and the
+              wider North West.
             </p>
 
             <div className="hero-actions">
@@ -95,68 +99,81 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-panel">
-            <div className="hero-card">
-              <p className="panel-label">A better direction for the redesign</p>
-              <ul className="trust-list">
-                {trustPoints.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
+          <div className="hero-media">
+            <div className="hero-image-main">
+              <Image
+                src="/assets/images/gallery/general/marlborough-hero.png"
+                alt="High-quality joinery interior by Marlborough Builders"
+                fill
+                priority
+                className="hero-image"
+                sizes="(max-width: 960px) 100vw, 50vw"
+              />
+            </div>
+
+            <div className="hero-image-secondary">
+              <Image
+                src="/assets/images/gallery/general/marlborough-roofing-hero.png"
+                alt="Residential roofing work by Marlborough Builders"
+                fill
+                className="hero-image"
+                sizes="(max-width: 960px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="trust-strip">
-        <div className="container trust-strip-inner">
-          {trustPoints.map((point) => (
-            <span key={point}>{point}</span>
-          ))}
-        </div>
-      </section>
-
-      <section className="section">
+      <section className="section trust-section">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Specialist divisions</p>
-            <h2>Joinery and roofing services with a stronger identity.</h2>
+            <p className="eyebrow">Why clients trust Marlborough Builders</p>
+            <h2>A stronger, more reliable local contractor presence.</h2>
             <p>
-              The new site should present Marlborough Builders as one trusted
-              company with two clear specialisms, not a generic trade template.
+              The redesigned site should make the business feel more established,
+              more trustworthy and more reflective of the quality of work being delivered.
             </p>
           </div>
 
-          <div className="card-grid two-up">
-            {featuredServices.map((service) => (
-              <article className="feature-card" key={service.title}>
-                <p className="card-kicker">{service.title}</p>
-                <h3>{service.title} services</h3>
-                <p>{service.text}</p>
-                <a href={`/${service.title.toLowerCase()}`}>Explore {service.title.toLowerCase()}</a>
+          <div className="trust-grid">
+            {trustItems.map((item) => (
+              <article className="trust-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section featured-work-section">
         <div className="container">
           <div className="section-heading">
-            <p className="eyebrow">Selected work</p>
-            <h2>A more professional, project-led portfolio.</h2>
+            <p className="eyebrow">Featured work</p>
+            <h2>Real projects, better presented.</h2>
             <p>
-              This section will evolve into a stronger showcase of completed
-              work, clearer project types and better visual proof.
+              A more project-led approach helps the business feel more credible,
+              more distinctive and less like a generic trade website.
             </p>
           </div>
 
-          <div className="card-grid three-up">
+          <div className="featured-work-grid">
             {featuredProjects.map((project) => (
-              <article className="project-card" key={project.title}>
-                <p className="card-kicker">{project.category}</p>
-                <h3>{project.title}</h3>
-                <p>{project.text}</p>
+              <article className="featured-work-card" key={project.title}>
+                <div className="featured-work-image-wrap">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="featured-work-image"
+                    sizes="(max-width: 960px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="featured-work-content">
+                  <p className="card-kicker">{project.category}</p>
+                  <h3>{project.title}</h3>
+                  <p>{project.text}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -169,8 +186,9 @@ export default function Home() {
             <p className="eyebrow">How it works</p>
             <h2>Clear process, straightforward communication.</h2>
             <p>
-              One of the goals of the redesign is to make the business feel more
-              structured, more established and easier to trust.
+              One of the main improvements over the old site is making the
+              business feel more structured, more established and easier to
+              trust from the first visit.
             </p>
           </div>
 
@@ -188,16 +206,15 @@ export default function Home() {
       <section className="section cta-section">
         <div className="container cta-panel">
           <div>
-            <p className="eyebrow">Next stage</p>
-            <h2>Now we can build the homepage properly.</h2>
+            <p className="eyebrow">Get in touch</p>
+            <h2>Need joinery or roofing work in Prescot or across Merseyside?</h2>
             <p>
-              This is the new structural base for the Marlborough Builders
-              redesign. The next step is refining layout, typography, imagery
-              and page content section by section.
+              Get in touch for a straightforward quote, practical advice and a
+              professional approach from start to finish.
             </p>
           </div>
           <a href="/contact" className="button button-primary">
-            Get in touch
+            Contact Marlborough Builders
           </a>
         </div>
       </section>
