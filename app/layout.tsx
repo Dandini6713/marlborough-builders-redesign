@@ -18,6 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en-GB" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-BF7LH87702"
           strategy="afterInteractive"

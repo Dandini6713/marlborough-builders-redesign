@@ -242,9 +242,14 @@ export default function Home() {
               Get in touch for a clear quotation, practical advice and work carried out to a proper standard.
             </p>
           </div>
-          <a href="/contact" className="button button-primary">
-            Request a quote
-          </a>
+          <div className="hero-actions">
+            <a href="/contact" className="button button-primary">
+              Request a quote
+            </a>
+            <a href="tel:07939551481" className="button button-ghost">
+              Call 07939 551481
+            </a>
+          </div>
         </div>
       </section>
     </main>
