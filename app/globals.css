@@ -474,6 +474,97 @@ a {
   border-top: 1px solid rgba(23, 23, 23, 0.08);
 }
 
+/* Service detail pages */
+.anchor-nav {
+  padding: 22px 28px;
+  border-radius: 20px;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 8px;
+}
+
+.anchor-nav-label {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.anchor-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.anchor-nav a {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.anchor-nav a:hover {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.service-detail-section {
+  border-top: 1px solid rgba(23, 23, 23, 0.08);
+  scroll-margin-top: 100px;
+}
+
+.service-detail-alt {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(249, 246, 240, 0.78) 100%);
+}
+
+.service-detail-inner {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.service-detail-copy h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.service-detail-copy p {
+  margin: 0;
+  line-height: 1.78;
+  color: var(--muted);
+}
+
+.service-detail-bullets {
+  margin: 0;
+  padding: 24px 28px 24px 48px;
+  border-radius: 20px;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-detail-bullets li {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--foreground);
+}
+
 /* Gallery page */
 .gallery-cta-bar {
   padding: 18px 24px;
@@ -914,6 +1005,10 @@ a {
   .contact-grid,
   .numbered-grid,
   .audience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-inner {
     grid-template-columns: 1fr;
   }
 
