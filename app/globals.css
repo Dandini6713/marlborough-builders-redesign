@@ -232,8 +232,8 @@ a {
 }
 
 .hero-media {
-  display: grid;
-  grid-template-rows: minmax(360px, 1fr) minmax(250px, 0.78fr);
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
@@ -246,12 +246,10 @@ a {
   box-shadow: var(--shadow-soft);
 }
 
-.hero-image-main {
-  min-height: 360px;
-}
-
+.hero-image-main,
 .hero-image-secondary {
-  min-height: 250px;
+  flex: 1;
+  min-height: 200px;
 }
 
 .hero-image,
@@ -1106,18 +1104,6 @@ a {
 
   .hero-copy {
     padding: 34px;
-  }
-
-  .hero-media {
-    grid-template-rows: minmax(300px, 1fr) minmax(220px, 0.72fr);
-  }
-
-  .hero-image-main {
-    min-height: 300px;
-  }
-
-  .hero-image-secondary {
-    min-height: 220px;
   }
 
   .cta-panel {
