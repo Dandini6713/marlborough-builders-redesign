@@ -38,6 +38,17 @@ export default function ContactPage() {
               </label>
 
               <label className="form-field">
+                <span>What do you need?</span>
+                <select name="service" defaultValue="">
+                  <option value="" disabled>Select a service</option>
+                  <option value="Joinery">Joinery</option>
+                  <option value="Roofing">Roofing</option>
+                  <option value="Both">Both</option>
+                  <option value="Not sure">Not sure</option>
+                </select>
+              </label>
+
+              <label className="form-field">
                 <span>Message</span>
                 <textarea name="message" rows={5} required />
               </label>
