@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
 import SiteHeader from "./SiteHeader";
+import ScrollReveal from "./ScrollReveal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ gtag('config', 'G-BF7LH87702');`}
       </head>
       <body>
         <SiteHeader />
+        <ScrollReveal />
         {children}
         <footer className="site-footer">
           <div className="container footer-grid">

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
+import Lightbox from "./Lightbox";
 
 const galleryItems = [
   { category: "joinery", image: "/assets/images/gallery/joinery/kitchen-installation.png", title: "Fitted kitchen", text: "Handleless units, worktops and splashback fitted for a clean, practical finish." },
@@ -20,11 +21,22 @@ type Filter = "all" | "joinery" | "roofing";
 
 export default function GalleryPage() {
   const [filter, setFilter] = useState<Filter>("all");
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const visible =
     filter === "all"
       ? galleryItems
       : galleryItems.filter((item) => item.category === filter);
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const prevImage = useCallback(
+    () => setLightboxIndex((i) => (i !== null ? (i - 1 + visible.length) % visible.length : null)),
+    [visible.length],
+  );
+  const nextImage = useCallback(
+    () => setLightboxIndex((i) => (i !== null ? (i + 1) % visible.length : null)),
+    [visible.length],
+  );
 
   return (
     <main className="site-shell">
@@ -62,8 +74,12 @@ export default function GalleryPage() {
           </div>
 
           <div className="gallery-grid">
-            {visible.map((item) => (
-              <article className="featured-work-card" key={item.title}>
+            {visible.map((item, i) => (
+              <article
+                className="featured-work-card gallery-card-clickable"
+                key={item.title}
+                onClick={() => setLightboxIndex(i)}
+              >
                 <div className="featured-work-image-wrap">
                   <Image
                     src={item.image}
@@ -81,6 +97,16 @@ export default function GalleryPage() {
               </article>
             ))}
           </div>
+
+          {lightboxIndex !== null && (
+            <Lightbox
+              images={visible}
+              index={lightboxIndex}
+              onClose={closeLightbox}
+              onPrev={prevImage}
+              onNext={nextImage}
+            />
+          )}
 
           <div className="gallery-instagram">
             <p>
