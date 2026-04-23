@@ -415,6 +415,214 @@ a {
   font-size: 0.88rem;
 }
 
+/* Subpage hero */
+.subpage-hero h1 {
+  margin: 0;
+  font-size: clamp(2.35rem, 4.6vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  max-width: 18ch;
+}
+
+.subpage-hero-lead {
+  max-width: 54ch;
+  margin: 18px 0 0;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/* Typical jobs */
+.typical-jobs-section {
+  border-top: 1px solid rgba(23, 23, 23, 0.08);
+}
+
+.typical-jobs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.typical-jobs-list li {
+  padding: 18px 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--foreground);
+}
+
+/* Service card grid (6-card, 3-col) */
+.service-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.section-footer-link {
+  margin-top: 28px;
+  text-align: center;
+}
+
+/* Approach section */
+.approach-section {
+  border-top: 1px solid rgba(23, 23, 23, 0.08);
+}
+
+/* Gallery page */
+.gallery-cta-bar {
+  padding: 18px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: linear-gradient(145deg, #eadfce 0%, #d8c8b2 100%);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 8px;
+}
+
+.gallery-cta-bar p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.gallery-cta-bar a {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.gallery-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent);
+}
+
+.filter-btn-active {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery-instagram {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.gallery-instagram p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.gallery-instagram a {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Numbered grid (services list) */
+.numbered-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.numbered-card {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 24px 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+.numbered-card-num {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--muted);
+  padding-top: 2px;
+}
+
+.numbered-card strong {
+  display: block;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.numbered-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* Audience panels (domestic / commercial) */
+.audience-section {
+  border-top: 1px solid rgba(23, 23, 23, 0.08);
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.audience-panel {
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+}
+
+.audience-panel h3 {
+  margin: 0 0 16px;
+  font-size: 1.18rem;
+  letter-spacing: -0.02em;
+}
+
+.audience-panel ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.audience-panel li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
 /* About page */
 .about-intro h1 {
   margin: 0;
@@ -700,10 +908,17 @@ a {
   .hero-layout,
   .trust-grid,
   .featured-work-grid,
+  .service-card-grid,
   .testimonials-grid,
   .process-grid,
-  .contact-grid {
+  .contact-grid,
+  .numbered-grid,
+  .audience-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .stat-band {
@@ -770,6 +985,10 @@ a {
     flex-direction: column;
     gap: 6px;
     text-align: center;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
 
