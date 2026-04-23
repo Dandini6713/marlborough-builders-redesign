@@ -48,9 +48,9 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 100;
   backdrop-filter: blur(12px);
-  background: rgba(243, 239, 231, 0.84);
+  background: rgba(243, 239, 231, 0.94);
   border-bottom: 1px solid var(--line);
 }
 
@@ -96,6 +96,58 @@ a {
 
 .site-nav a:not(.button) {
   color: #353535;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--foreground);
+  border-radius: 2px;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  border-top: 1px solid var(--line);
+  background: rgba(243, 239, 231, 0.98);
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 12px 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--foreground);
+  border-radius: 12px;
+}
+
+.mobile-nav a:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.mobile-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 8px 4px;
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
 }
 
 .button {
@@ -1044,8 +1096,12 @@ a {
     display: none;
   }
 
-  .header-actions .phone-link {
+  .header-actions {
     display: none;
+  }
+
+  .burger {
+    display: flex;
   }
 
   .hero-copy {
