@@ -415,6 +415,128 @@ a {
   font-size: 0.88rem;
 }
 
+/* About page */
+.about-intro h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 54ch;
+}
+
+.about-body {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-body p {
+  line-height: 1.78;
+  color: var(--muted);
+}
+
+.about-values-section {
+  border-top: 1px solid rgba(23, 23, 23, 0.08);
+}
+
+/* Contact page */
+.contact-section h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field span {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.form-field input,
+.form-field textarea {
+  padding: 12px 14px;
+  border: 1px solid rgba(23, 23, 23, 0.15);
+  border-radius: 12px;
+  background: var(--surface);
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--foreground);
+  transition: border-color 0.15s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.contact-details-card {
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(23, 23, 23, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-details-card h2 {
+  margin: 0 0 20px;
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+}
+
+.contact-dl {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-dl dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.contact-dl dd {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 /* Stat band */
 .stat-band {
   display: grid;
@@ -579,7 +701,8 @@ a {
   .trust-grid,
   .featured-work-grid,
   .testimonials-grid,
-  .process-grid {
+  .process-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
