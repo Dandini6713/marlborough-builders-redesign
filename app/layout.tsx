@@ -5,9 +5,9 @@ import SiteHeader from "./SiteHeader";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Marlborough Builders | Joinery & Roofing in Prescot",
+  title: "Marlborough Builders | Joinery & Roofing in Prescot, Merseyside",
   description:
-    "Modern joinery and roofing specialists serving Prescot, Merseyside and the North West. Domestic and commercial work, clear quotations, dependable workmanship.",
+    "Family-run joinery and roofing company based in Prescot. Clear quotations, reliable communication and quality workmanship for homes and businesses across Merseyside and the Northwest.",
 };
 
 export default function RootLayout({

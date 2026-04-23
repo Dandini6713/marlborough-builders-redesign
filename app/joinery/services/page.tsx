@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Full Joinery Service List | Marlborough Builders, Prescot",
+  description:
+    "Fitted wardrobes, staircase installations, first and second fix carpentry, timber framing, fencing, gates and commercial fit-outs across Merseyside.",
+};
+
 const sections = [
   {
     id: "fitted-furniture",

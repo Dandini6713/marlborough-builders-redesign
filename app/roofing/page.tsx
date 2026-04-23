@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Roofing Services in Prescot & Merseyside | Marlborough Builders",
+  description:
+    "Slating, tiling, flat roofs, lead work, Velux windows, guttering and emergency repairs for homes and commercial buildings across the Northwest.",
+};
 
 const roofingProjects = [
   {

@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Joinery Services in Prescot & Merseyside | Marlborough Builders",
+  description:
+    "Fitted furniture, staircases, structural carpentry, loft conversions and kitchens for domestic and commercial clients across the Northwest.",
+};
 
 const joineryProjects = [
   {

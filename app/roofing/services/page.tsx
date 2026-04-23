@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Full Roofing Service List | Marlborough Builders, Prescot",
+  description:
+    "Natural slate, concrete and clay tiling, EPDM, GRP, lead flashings, roof lights, storm repairs and guttering across Merseyside and the Northwest.",
+};
+
 const sections = [
   {
     id: "slating",

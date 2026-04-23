@@ -876,22 +876,21 @@ a {
 }
 
 /* About page */
-.about-intro h1 {
-  margin: 0;
+.about-title {
+  margin: 0 0 24px;
   font-size: clamp(2.1rem, 4vw, 3.3rem);
   line-height: 1.03;
   letter-spacing: -0.02em;
 }
 
-.about-lead {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: var(--muted);
-  max-width: 54ch;
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
 }
 
 .about-body {
-  max-width: 680px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -900,6 +899,19 @@ a {
 .about-body p {
   line-height: 1.78;
   color: var(--muted);
+}
+
+.about-van-col {
+  display: flex;
+  align-items: center;
+}
+
+.about-van {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  display: block;
 }
 
 .about-values-section {
@@ -1178,7 +1190,8 @@ a {
   .process-grid,
   .contact-grid,
   .numbered-grid,
-  .audience-grid {
+  .audience-grid,
+  .about-intro-grid {
     grid-template-columns: 1fr;
   }
 
