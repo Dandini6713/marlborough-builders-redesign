@@ -40,6 +40,24 @@ const featuredProjects = [
   },
 ];
 
+const testimonials = [
+  {
+    quote: "Brilliant craftsmanship, tidy workers and everything finished when they said it would be.",
+    author: "Paul T",
+    location: "Prescot",
+  },
+  {
+    quote: "Professional from start to finish, fair on price and no stress at any point.",
+    author: "Sandra K",
+    location: "Whiston",
+  },
+  {
+    quote: "Reliable team, no drama on site and exactly the sort of people you want on a commercial job.",
+    author: "Dave R",
+    location: "Knowsley",
+  },
+];
+
 const processSteps = [
   "Initial enquiry",
   "Site visit and advice",
@@ -49,6 +67,7 @@ const processSteps = [
 
 export default function Home() {
   return (
+    <>
     <main className="site-shell">
       <header className="site-header">
         <div className="container header-inner">
@@ -75,6 +94,11 @@ export default function Home() {
               Contact
             </a>
           </nav>
+
+          <div className="header-actions">
+            <a className="phone-link" href="tel:07939551481">07939 551481</a>
+            <a className="button button-primary button-sm" href="/contact">Get a quote</a>
+          </div>
         </div>
       </header>
 
@@ -123,6 +147,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="container stat-band">
+        <article className="stat-card">
+          <strong>Prescot based</strong>
+          <span>Working across Merseyside and the wider Northwest</span>
+        </article>
+        <article className="stat-card">
+          <strong>30+ years</strong>
+          <span>Hands-on trade experience across joinery and roofing</span>
+        </article>
+        <article className="stat-card">
+          <strong>Domestic + Commercial</strong>
+          <span>Comfortable in occupied homes and live working sites</span>
+        </article>
+        <article className="stat-card">
+          <strong>Registered Ltd</strong>
+          <span>Companies House no. 15420682</span>
+        </article>
+      </div>
 
       <section className="section trust-section">
         <div className="container">
@@ -181,6 +224,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section testimonials-section">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">What people say</p>
+            <h2>A few words from recent clients</h2>
+            <p>
+              Short notes from homeowners and commercial clients we have worked for recently.
+            </p>
+          </div>
+
+          <div className="testimonials-grid">
+            {testimonials.map((t) => (
+              <article className="testimonial-card" key={t.author}>
+                <blockquote>&ldquo;{t.quote}&rdquo;</blockquote>
+                <footer>{t.author}, {t.location}</footer>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <div className="container process-grid">
           <div className="section-heading compact">
@@ -218,5 +282,67 @@ export default function Home() {
         </div>
       </section>
     </main>
+
+      <footer className="site-footer">
+        <div className="container footer-grid">
+          <div className="footer-col footer-brand">
+            <Image
+              src="/marlborough_builders_emblem_roundel.svg"
+              alt="Marlborough Builders"
+              width={48}
+              height={48}
+            />
+            <strong className="footer-company">Marlborough Builders</strong>
+            <span className="footer-tagline">Joinery and roofing specialists</span>
+            <p>
+              Family-run building company based in Prescot, delivering joinery
+              and roofing work across Merseyside and the Northwest.
+            </p>
+          </div>
+
+          <div className="footer-col">
+            <h4>Joinery</h4>
+            <ul>
+              <li><a href="/joinery">Overview</a></li>
+              <li><a href="/joinery/services">Services</a></li>
+              <li>
+                <a href="https://www.instagram.com/marlboroughjoinerydivision/" target="_blank" rel="noopener noreferrer">
+                  @marlboroughjoinerydivision
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4>Roofing</h4>
+            <ul>
+              <li><a href="/roofing">Overview</a></li>
+              <li><a href="/roofing/services">Services</a></li>
+              <li>
+                <a href="https://www.instagram.com/marlborough_roofing/" target="_blank" rel="noopener noreferrer">
+                  @marlboroughroofing
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="tel:07939551481">07939 551481</a></li>
+              <li>28 Marlborough Road, Prescot, Merseyside, L34 6LE</li>
+              <li>Monday to Friday, 9:00am to 5:30pm</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-meta">
+          <div className="container footer-meta-inner">
+            <span>&copy; 2026 Marlborough Builders Ltd. All rights reserved.</span>
+            <span>Registered in England &amp; Wales &middot; Company no. 15420682</span>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }
