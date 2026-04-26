@@ -2,9 +2,24 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About Marlborough Builders | Family-Run Joinery & Roofing, Prescot",
+  title: "About Us | Marlborough Builders, Prescot",
   description:
     "Over 30 years of hands-on trade experience across joinery and roofing. Separate specialist teams, no subcontractors, and honest advice from first call to finished job.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Us | Marlborough Builders, Prescot",
+    description:
+      "Over 30 years of hands-on trade experience across joinery and roofing. Separate specialist teams, no subcontractors, and honest advice from first call to finished job.",
+    url: "/about",
+    images: [
+      {
+        url: "/assets/images/gallery/general/marlborough-van.png",
+        width: 1220,
+        height: 680,
+        alt: "Marlborough Builders van on site",
+      },
+    ],
+  },
 };
 
 const values = [

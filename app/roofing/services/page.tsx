@@ -4,6 +4,13 @@ export const metadata: Metadata = {
   title: "Full Roofing Service List | Marlborough Builders, Prescot",
   description:
     "Natural slate, concrete and clay tiling, EPDM, GRP, lead flashings, roof lights, storm repairs and guttering across Merseyside and the Northwest.",
+  alternates: { canonical: "/roofing/services" },
+  openGraph: {
+    title: "Full Roofing Service List | Marlborough Builders, Prescot",
+    description:
+      "Natural slate, concrete and clay tiling, EPDM, GRP, lead flashings, roof lights, storm repairs and guttering across Merseyside and the Northwest.",
+    url: "/roofing/services",
+  },
 };
 
 const sections = [

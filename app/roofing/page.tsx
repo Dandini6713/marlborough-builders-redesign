@@ -5,6 +5,21 @@ export const metadata: Metadata = {
   title: "Roofing Services in Prescot & Merseyside | Marlborough Builders",
   description:
     "Slating, tiling, flat roofs, lead work, Velux windows, guttering and emergency repairs for homes and commercial buildings across the Northwest.",
+  alternates: { canonical: "/roofing" },
+  openGraph: {
+    title: "Roofing Services in Prescot & Merseyside | Marlborough Builders",
+    description:
+      "Slating, tiling, flat roofs, lead work, Velux windows, guttering and emergency repairs for homes and commercial buildings across the Northwest.",
+    url: "/roofing",
+    images: [
+      {
+        url: "/assets/images/gallery/roofing/natural-slate-roof.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Natural slate roofing by Marlborough Builders",
+      },
+    ],
+  },
 };
 
 const roofingProjects = [

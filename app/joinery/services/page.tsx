@@ -4,6 +4,13 @@ export const metadata: Metadata = {
   title: "Full Joinery Service List | Marlborough Builders, Prescot",
   description:
     "Fitted wardrobes, staircase installations, first and second fix carpentry, timber framing, fencing, gates and commercial fit-outs across Merseyside.",
+  alternates: { canonical: "/joinery/services" },
+  openGraph: {
+    title: "Full Joinery Service List | Marlborough Builders, Prescot",
+    description:
+      "Fitted wardrobes, staircase installations, first and second fix carpentry, timber framing, fencing, gates and commercial fit-outs across Merseyside.",
+    url: "/joinery/services",
+  },
 };
 
 const sections = [

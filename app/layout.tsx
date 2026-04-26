@@ -5,10 +5,33 @@ import SiteHeader from "./SiteHeader";
 import ScrollReveal from "./ScrollReveal";
 import "./globals.css";
 
+const SITE_URL = "https://marlboroughbuilders.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Marlborough Builders | Joinery & Roofing in Prescot, Merseyside",
   description:
     "Family-run joinery and roofing company based in Prescot. Clear quotations, reliable communication and quality workmanship for homes and businesses across Merseyside and the Northwest.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Marlborough Builders | Joinery & Roofing in Prescot, Merseyside",
+    description:
+      "Family-run joinery and roofing company based in Prescot. Clear quotations, reliable communication and quality workmanship for homes and businesses across Merseyside and the Northwest.",
+    url: SITE_URL,
+    siteName: "Marlborough Builders",
+    images: [
+      {
+        url: "/assets/images/gallery/joinery/oak-glass-balustrade-after.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Quality joinery by Marlborough Builders",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
   icons: {
     icon: [
       { url: "/marlborough_builders_emblem_roundel.svg", type: "image/svg+xml" },
@@ -47,6 +70,59 @@ gtag('config', 'G-BF7LH87702');`}
         </Script>
       </head>
       <body>
+        <Script
+          id="schema-local-business"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HomeAndConstructionBusiness",
+              name: "Marlborough Builders",
+              url: SITE_URL,
+              telephone: "+447939551481",
+              image:
+                SITE_URL +
+                "/assets/images/gallery/joinery/oak-glass-balustrade-after.jpg",
+              description:
+                "Family-run joinery and roofing company based in Prescot, delivering quality work for homes and businesses across Merseyside and the Northwest.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "28 Marlborough Road",
+                addressLocality: "Prescot",
+                addressRegion: "Merseyside",
+                postalCode: "L34 6LE",
+                addressCountry: "GB",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 53.4297,
+                longitude: -2.8031,
+              },
+              areaServed: [
+                { "@type": "City", name: "Prescot" },
+                { "@type": "AdministrativeArea", name: "Merseyside" },
+                { "@type": "AdministrativeArea", name: "North West England" },
+              ],
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+                opens: "09:00",
+                closes: "17:30",
+              },
+              priceRange: "££",
+              sameAs: [
+                "https://www.instagram.com/marlboroughjoinerydivision/",
+                "https://www.instagram.com/marlborough_roofing/",
+              ],
+            }),
+          }}
+        />
         <SiteHeader />
         <ScrollReveal />
         {children}

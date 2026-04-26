@@ -5,6 +5,21 @@ export const metadata: Metadata = {
   title: "Joinery Services in Prescot & Merseyside | Marlborough Builders",
   description:
     "Fitted furniture, staircases, structural carpentry, loft conversions and kitchens for domestic and commercial clients across the Northwest.",
+  alternates: { canonical: "/joinery" },
+  openGraph: {
+    title: "Joinery Services in Prescot & Merseyside | Marlborough Builders",
+    description:
+      "Fitted furniture, staircases, structural carpentry, loft conversions and kitchens for domestic and commercial clients across the Northwest.",
+    url: "/joinery",
+    images: [
+      {
+        url: "/assets/images/gallery/joinery/oak-glass-balustrade-after.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Oak balustrade and fitted joinery by Marlborough Builders",
+      },
+    ],
+  },
 };
 
 const joineryProjects = [
