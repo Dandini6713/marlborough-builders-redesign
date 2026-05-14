@@ -1,18 +1,47 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useRef } from "react";
 
 export default function HeroV2() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const apply = () => {
+      if (mq.matches) {
+        video.pause();
+      } else {
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {});
+        }
+      }
+    };
+
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
   return (
     <section className="hero-v2" aria-label="Marlborough Builders introduction">
       <div className="hero-v2-image-wrap">
-        <Image
-          src="/assets/images/hero/hero-staircase-dark.png"
-          alt="Oak staircase hallway by Marlborough Builders"
-          fill
-          priority
-          quality={85}
-          sizes="100vw"
+        <video
+          ref={videoRef}
           className="hero-v2-image"
-        />
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          poster="/assets/images/hero/hero-staircase-dark.png"
+        >
+          <source src="/assets/images/hero/hero-background.mp4" type="video/mp4" />
+        </video>
         <div className="hero-v2-vignette" aria-hidden="true" />
       </div>
 
