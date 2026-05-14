@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroV2 from "./HeroV2";
 
 const trustItems = [
   {
@@ -104,51 +105,7 @@ const processSteps = [
 export default function Home() {
   return (
     <main className="site-shell">
-      <section className="hero-section">
-        <div className="container hero-layout">
-          <div className="hero-copy">
-            <p className="eyebrow">Prescot, Merseyside & North West</p>
-            <h1>Joinery and roofing done properly</h1>
-            <p className="hero-text">
-              Marlborough Builders delivers quality joinery and roofing work for
-              domestic and commercial clients across Prescot, Merseyside and the
-              wider North West.
-            </p>
-
-            <div className="hero-actions">
-              <a href="/contact" className="button button-primary">
-                Request a quote
-              </a>
-              <a href="/gallery" className="button button-ghost">
-                View recent work
-              </a>
-            </div>
-          </div>
-
-          <div className="hero-media">
-            <div className="hero-image-main">
-              <Image
-                src="/assets/images/gallery/general/marlborough-hero.png"
-                alt="High-quality joinery interior by Marlborough Builders"
-                fill
-                priority
-                className="hero-image"
-                sizes="(max-width: 960px) 100vw, 50vw"
-              />
-            </div>
-
-            <div className="hero-image-secondary">
-              <Image
-                src="/assets/images/gallery/general/marlborough-roofing-hero.png"
-                alt="Residential roofing work by Marlborough Builders"
-                fill
-                className="hero-image"
-                sizes="(max-width: 960px) 100vw, 50vw"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroV2 />
 
       <div className="container stat-band">
         <article className="stat-card">

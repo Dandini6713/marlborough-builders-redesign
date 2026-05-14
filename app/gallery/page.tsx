@@ -15,6 +15,7 @@ const galleryItems = [
   { category: "roofing", image: "/assets/images/gallery/roofing/chimney-lead-flashing.jpg", title: "Chimney lead flashing", text: "Lead flashing fitted neatly around the chimney base to keep the roof weather-tight." },
   { category: "joinery", image: "/assets/images/gallery/joinery/outbuilding-shed-door-installation-collage.jpg", title: "Timber garage doors", text: "Bespoke timber garage doors made and fitted to suit the outbuilding." },
   { category: "roofing", image: "/assets/images/gallery/roofing/new-roof-tiling-detail.jpg", title: "New roof tiling", text: "New roof tiles laid over fresh underlay to give the roof a neat, even finish." },
+  { category: "joinery", image: "/assets/images/gallery/joinery/fence-marlborough.jpg", title: "Fencing and concrete base", text: "Concrete post and panel fencing with a new concrete slab base laid on prepared aggregate.", alt: "Concrete post and panel fence with concrete base by Marlborough Builders" },
 ];
 
 type Filter = "all" | "joinery" | "roofing";
@@ -83,7 +84,7 @@ export default function GalleryPage() {
                 <div className="featured-work-image-wrap">
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={("alt" in item && item.alt) || item.title}
                     fill
                     className="featured-work-image"
                     sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
@@ -13,14 +13,30 @@ const navLinks = [
 
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  const isHome = pathname === "/";
+
+  useEffect(() => {
+    if (!isHome) {
+      setScrolled(true);
+      return;
+    }
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHome]);
+
+  const transparent = isHome && !scrolled && !menuOpen;
 
   function isActive(href: string) {
     return pathname === href || pathname.startsWith(href + "/");
   }
 
   return (
-    <header className="site-header">
+    <header className={`site-header${transparent ? " header-transparent" : ""}`}>
       <div className="container header-inner">
         <a className="brand" href="/">
           <Image
@@ -28,7 +44,6 @@ export default function SiteHeader() {
             alt="Marlborough Builders"
             width={52}
             height={52}
-            priority
           />
           <div className="brand-copy">
             <span className="brand-name">Marlborough Builders</span>

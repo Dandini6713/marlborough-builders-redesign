@@ -1,11 +1,46 @@
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
+
+type Status = "idle" | "sending" | "success" | "error";
 
 export default function ContactPage() {
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    alert("Thanks — we'll be in touch shortly.");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+      subject: "New enquiry from marlboroughbuilders.com",
+      name: data.get("name"),
+      phone: data.get("phone"),
+      email: data.get("email"),
+      service: data.get("service"),
+      message: data.get("message"),
+    };
+
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json();
+      if (res.ok && result.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -53,9 +88,24 @@ export default function ContactPage() {
                 <textarea name="message" rows={5} required />
               </label>
 
-              <button type="submit" className="button button-primary">
-                Send enquiry
+              <button
+                type="submit"
+                className="button button-primary"
+                disabled={status === "sending"}
+              >
+                {status === "sending" ? "Sending..." : "Send enquiry"}
               </button>
+
+              {status === "success" && (
+                <p className="form-message form-message-success" role="status">
+                  Thanks for your enquiry. We will be in touch shortly.
+                </p>
+              )}
+              {status === "error" && (
+                <p className="form-message form-message-error" role="alert">
+                  Something went wrong. Please try calling us on 07939 551481.
+                </p>
+              )}
             </form>
 
             <aside className="contact-details-card">
